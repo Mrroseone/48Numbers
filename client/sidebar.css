@@ -1,0 +1,19 @@
+.ui.vertical.menu .item > i.icon {
+    float: left;
+    width: 1.22em;
+    margin: 0em 1em 0em 0em;
+}
+
+
+.ui.vertical.menu .item:not(.dropdown) > .menu > .item {
+  font-size: 1rem;
+}
+
+
+.login-buttons-dropdown-align-right {
+	font-size: 20px;
+}
+
+.beleg_field {
+padding-bottom: 20px;	
+}

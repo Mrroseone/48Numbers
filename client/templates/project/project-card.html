@@ -1,0 +1,29 @@
+<template name="projectCard">
+
+
+  <div class="speciale card">
+    <div class="dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button"><a href="projekte/{{jobnummer}}">Zum Projekt</a></div>
+          </div>
+        </div>
+      </div>
+      <img src="/images/avatar/large/native.png">
+    </div>
+    <div class="content">
+      <a class="header">{{title}}</a>
+      <div class="meta">
+        <span class="date">{{jobnummer}}</span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="money icon"></i>
+        {{betrag}}€
+      </a>
+    </div>
+  </div>
+
+</template>

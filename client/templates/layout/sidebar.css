@@ -1,0 +1,15 @@
+
+.ui.vertical.menu .item > i.icon {
+    float: left;
+    width: 1.22em;
+    margin: 0em 0em 0em 0.5em;
+}
+i.icon.LEFT {
+  color: pink;	
+  width: auto;
+  margin: 0em 0.5em 0em 0em;
+}
+i.basic.icon.LEFT {
+  width: auto;
+  margin: 0em 0.5em 0em 0em;
+}

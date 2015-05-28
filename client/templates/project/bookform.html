@@ -1,0 +1,11 @@
+<template name="insertBookForm">
+  {{#autoForm collection="Projekte" id="insertBookForm" type="insert"}}
+    <fieldset>
+      <legend>Add a Book</legend>
+      {{> afQuickField name='title'}}
+      {{> afQuickField name='betrag'}}
+
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+</template>

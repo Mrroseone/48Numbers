@@ -1,0 +1,10 @@
+.ui.cards > .card,
+.ui.card {
+  max-width: 100%;
+  width: 235px;
+}
+
+
+body {
+	color: black;
+}

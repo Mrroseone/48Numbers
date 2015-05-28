@@ -1,0 +1,26 @@
+<template name="projectTeam">
+<div class="eight wide column">
+{{> dividerTeam}}  
+<div class="ui divided list">
+ 
+{{#each team}}
+  <div class="item">
+   <div class="right floated small icon ui buttons">
+  <div class="ui button"><i class="edit icon"></i></div>
+  <div class="ui button"><i class="remove User icon"></i></div>
+</div>
+    <img class="ui avatar image" src="/images/avatar/small/justen.jpg">
+    <div class="content">
+      <div class="header">{{name}} <span class="teamProzent">| {{prozent}}%</span></div>       
+    </div>
+  </div>
+{{/each}} 
+</div>
+
+
+ <hr>
+<!--  <div class="right floated column"> {{> addUser}}</div>   
+ -->
+{{> buttons}}
+</div>
+</template>

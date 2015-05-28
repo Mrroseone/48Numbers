@@ -1,0 +1,23 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+insecure
+semantic:ui
+flemay:less-autoprefixer
+semantic:ui-css
+iron:router
+accounts-password
+aldeed:simple-schema
+aldeed:collection2
+richsilv:semantic-ui-modal
+meteorhacks:aggregate
+cfs:standard-packages
+cfs:filesystem
+useraccounts:semantic-ui
+accounts-ui
+autopublish
+iamkevingreen:meteor-pickadate

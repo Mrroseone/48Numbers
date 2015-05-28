@@ -1,0 +1,69 @@
+<template name="sidebar">
+
+  <div class="ui left vertical inverted sidebar menu">
+
+   <div class="item">
+     <div class="ui small inverted header">Eingabe</div>
+     <div class="menu">
+
+      <a class="active teal item" data-action="belegeModal">
+       <i class="add circle icon"></i>Neuer Beleg
+
+     </a>
+     <a class="active teal item" data-action="general-modal">
+       <i class="add square icon"></i>Neues Projekt
+
+     </a>
+
+   </div>
+ </div> 
+
+ <div class="item">
+   <div class="ui small inverted header">Dominik´s Daten</div>
+   <div class="menu">
+    <a class="item" href="/meinedrafts">
+     <i class="edit icon"></i>Meine Drafts
+     <div class="ui pink label">1</div>
+   </a>
+
+   <a class="item" href="/meineprojekte">
+     <i class="diamond icon"></i>Meine Projekte
+     <div class="ui yellow label">1</div>
+   </a>
+
+   <a class="item">
+     <i class="dashboard icon"></i>Meine Dashboard
+   </a>
+ </div>
+</div>
+
+<div class="item">
+ <div class="ui small inverted header">Dark Horse</div>
+ <div class="menu">
+   <a class="item" href="/projekte">
+     <i class="diamond icon"></i>Alle Projekte
+     <div class="ui teal label">1</div>
+   </a>
+
+   <a class="item">
+     <i class="dashboard icon"></i>Company Dashboard
+   </a>
+ </div>
+</div>
+<div class="item">
+ <div class="ui small inverted header">Settings</div>
+ <div class="menu">
+ <a class="item" href="/projectSubmit">
+     <i class="user icon"></i>Profil
+   </a>
+ </div>
+</div>
+
+  <!-- <div class="item inverted">
+    <div class="ui transparent icon input">
+      <input type="text" placeholder="Search mail...">
+      <i class="search icon"></i>
+    </div>
+  </div> -->
+</div>
+</template>

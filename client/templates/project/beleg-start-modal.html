@@ -1,0 +1,72 @@
+<template name="belegeModal">
+  <div class="header">
+    Beleg Hinzufügen
+  </div>
+  <div class="content">
+   <form class="ui form">
+  <h4 class="ui dividing header">Personal Information</h4>
+  <div class="ui form">
+    
+    <div class="two fields">
+    <div class="field beleg_field">
+    <label>Beleg Name</label>
+    <input class="form-control" id="title" name="title" value="" placeholder="Projektnamen eintragen">
+    </div>
+
+    <div class="field beleg_field">
+      <label>Projekt</label>
+      <select class="ui dropdown">
+      {{#each project}}
+      <option value="{{title}}">{{title}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+    </div>
+
+  <div class="two fields">
+  <div class="field beleg_field">
+        <div class="inline field">
+        <div class="ui toggle checkbox">
+          <input type="checkbox">
+          <label>Billable</label>
+        </div>
+      </div>
+  </div>
+    
+  <div class="field beleg_field">
+      <select class="ui dropdown">
+      <option value="Sonstiges">Sonstiges</option>
+      <option value="Reise">Reise</option>
+      <option value="Material">Material</option>
+      <option value="Personal">Personal</option>
+      <option value="Incentives">Incentives</option>
+      <option value="andere Agentur">andere Agentur</option>
+      <option value="Marketing">Marketing</option>
+    </select>
+  </div>
+</div>
+
+<div class="two fields">
+
+ <div class="field beleg_field">
+    <label>Betrag</label>
+     <input class="form-control" type="Number" id="betrag" name="betrag" value="" placeholder="Betrag">
+  </div>
+
+  <div class="field">
+    <label>MwSt. Steuer</label>
+     <select class="ui dropdown">
+      <option value="3">19%</option>
+      <option value="2">7%</option>
+      <option value="1">0%</option>
+    </select>
+  </div>
+</div>
+     
+
+ <input class="ui right tiny labeled button" name="commit" type="submit" value="Beleg hinzufügen">
+</div>
+</form>
+  </div>
+</template>

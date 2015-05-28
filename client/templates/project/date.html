@@ -1,0 +1,51 @@
+<template name="date">
+
+ <div class="header">
+    Draft Hinzufügen
+  </div>
+  <div class="content">
+   <form class="ui form">
+  <h4 class="ui dividing header">Personal Information</h4>
+  <div class="ui form">
+   <div class="two fields">
+   
+    <div class="field">
+    <label>Projektbeschreibung</label>
+    <input class="form-control" id="title" name="title" value="" placeholder="Projektnamen eintragen">
+    </div>
+
+  <div class="field">
+  <label>Jobnummer</label>
+
+     <input class="form-control" id="jobnummer" name="jobnummer" value="" placeholder="Jobnummer eintragen">
+  </div>
+</div>
+
+ <div class="two fields">
+
+<div class="field">
+  <label>Leistungszeitraum</label>
+  <input type="text" class="form-control datepicker" name="startdate" placeholder="Projekt Start">
+</div>
+
+<div class="field">
+  <label>Projekt Abschluss</label>
+  <input type="text" class="form-control datepicker2" name="endDate" placeholder="Projekt Start">
+</div>
+
+</div>
+
+<div class="two fields">
+<div class="field">
+    <label>Betrag</label>
+     <input class="form-control" type="Number" id="betrag" name="betrag" value="" placeholder="Angebotssumme">
+  </div>
+</div>
+
+ <input class="ui right tiny labeled button" name="commit" type="submit" value="Projekt erstellen">
+</div>
+</form>
+</div>
+
+
+</template>
