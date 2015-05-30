@@ -1,25 +1,68 @@
-Template.belegeModal.events({
-'submit form': function(e) {
-e.preventDefault();
-var project = {
+Template.insertBelege.events({
+	'submit form': function(e) {
+		e.preventDefault();
+		
+		var beleg = {
 
-// jobnummer: $(e.target).find('[name=jobnummer]').val(),
+		// jobnummer: $(e.target).find('[name=jobnummer]').val(),
+		// projectId: this._id,
+		discription: $(e.target).find('[name=title]').val(),
+		projectId: $(e.target).find('[name=dropdown]').val(),
+		amount: $(e.target).find('[name=betrag]').val(),
+		billable: $(e.target).find('[name=billable]').val(),
+		category: $(e.target).find('[name=category]').val(),
+		tax: $(e.target).find('[name=tax]').val(),
 
-billable : [
-    {
-name: $(e.target).find('[name=name]').val(),
-cost: $(e.target).find('[name=cost]').val(),
-}]
-// jobnummer: $(e.target).find('[name=jobnummer]').val(),
-};
+
+		// team : [
+		//     {
+		// name: $(e.target).find('[name=name]').val(),
+		// prozent: $(e.target).find('[name=prozent]').val(),
+		// }],
+		};
 
 
-console.log(project);
-project._id = Projekte.insert(project);
-Router.go('/Projekte');
 
-}
+		Meteor.call('belegInsert', beleg, function(error, result) {
+			// console.log(result._id);
+
+		// display the error to the user and abort
+		// if (error)
+		// 	alert(error.reason);
+			
+		// show this result but route anyway
+		 // Router.go('projectDetail', {jobnummer: result.jobnummer});
+		});
+	}
 });
+
+// console.log(project);
+// project._id = Projekte.insert(project);
+// Router.go('/Projekte');
+
+
+// Template.belegeModal.events({
+// 'submit form': function(e) {
+// e.preventDefault();
+// var project = {
+
+// // jobnummer: $(e.target).find('[name=jobnummer]').val(),
+
+// billable : [
+//     {
+// name: $(e.target).find('[name=name]').val(),
+// cost: $(e.target).find('[name=cost]').val(),
+// }]
+// // jobnummer: $(e.target).find('[name=jobnummer]').val(),
+// };
+
+
+// console.log(project);
+// project._id = Projekte.insert(project);
+// Router.go('/Projekte');
+
+// }
+// });
 
 // Template.billableSubmit.helpers({
 //  foo: function () {

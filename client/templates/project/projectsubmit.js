@@ -33,7 +33,6 @@ Template.date.events({
 		 Router.go('projectDetail', {jobnummer: result.jobnummer});
 		});
 	}
-	.modal('hide')
 });
 
 // console.log(project);

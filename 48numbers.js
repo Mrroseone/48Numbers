@@ -13,7 +13,7 @@ Template.sidebar.events({
     }
   });  
 
-Template.projectAcquisition.rendered = function(){
+Template.projectTeam.rendered = function(){
   this.$('.dropdown')
   .dropdown({
     // you can use any ui transition
@@ -124,6 +124,12 @@ this.$('select.dropdown')
     }
   });
 
+    Template.addUser.helpers({
+    'user': function(){
+     return Users.find()
+    }
+  });
+
   Template.belegeModal.rendered = function(){
 this.$('.ui.checkbox')
   .checkbox();
@@ -132,10 +138,16 @@ this.$('select.dropdown')
 ;
 };  
 
-  Template.belegeModal.helpers({
+  Template.insertBelege.helpers({
+
+    
     'project': function(){
-     return Projekte.find({author: 'Dominik Kenzler', draft:true})
+     
+     var userId = Meteor.userId();
+     var test = Users.findOne({_id: userId});
+     return Projekte.find({"team.name" : test.username})
     }
+
   });
 
 }

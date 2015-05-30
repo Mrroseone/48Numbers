@@ -7,33 +7,12 @@
       <div class="header">
         People You Might Know
       </div>
-      <div class="item">
+      {{#each user}}
+      <div class="item add" data-value="{{_id}}">
         <img class="ui mini avatar image" src="/images/avatar/small/jenny.jpg">
-        Jenny Hess
+        {{username}}
       </div>
-      <div class="item">
-        <img class="ui mini avatar image" src="/images/avatar/small/elliot.jpg">
-        Elliot Fu
-      </div>
-      <div class="item">
-        <img class="ui mini avatar image" src="/images/avatar/small/stevie.jpg">
-        Stevie Feliciano
-      </div>
-      <div class="header">
-        Your Friends' Friends
-      </div>
-      <div class="item">
-        <img class="ui mini avatar image" src="/images/avatar/small/christian.jpg">
-        Christian
-      </div>
-      <div class="item">
-        <img class="ui mini avatar image" src="/images/avatar/small/matt.jpg">
-        Matt
-      </div>
-      <div class="item">
-        <img class="ui mini avatar image" src="/images/avatar/small/justen.jpg">
-        Justen Kitsune
-      </div>
+      {{/each}}
     </div>
   </div>
 

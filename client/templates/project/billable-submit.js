@@ -1,7 +1,7 @@
 Template.billableSubmit.events({
 'submit form': function(e) {
 e.preventDefault();
-var project = {
+var beleg = {
 
 // jobnummer: $(e.target).find('[name=jobnummer]').val(),
 
