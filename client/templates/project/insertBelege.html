@@ -15,24 +15,34 @@
 
     <div class="field beleg_field">
       <label>Projekt</label>
-      <select class="ui dropdown">
+      <select class="ui dropdown" name="project">
       {{#each project}}
-      <option name="dropdown" value="{{_id}}">{{title}}</option>
+      <option name="dropdown"  value="{{_id}}">{{_id}} {{title}}</option>
       {{/each}}
     </select>
   </div>
 
     </div>
 
-  <div class="two fields">
+ <div class="two fields">
+      <div class="field beleg_field">
+        <div class="inline field">
+        <div class="ui checkbox">
+    <input type="checkbox" name="billable" id="billable" value="true">
+    <label>Billable</label>
+  </div>
+      </div>
+  </div>
+<!--   <div class="two fields">
   <div class="field beleg_field">
         <div class="inline field">
         <div class="ui toggle checkbox">
-          <input type="checkbox" name="billable">
+          <input type="checkbox" tabindex="0" id="billable" name="billable">
           <label>Billable</label>
+          Value: <p id="value"></p>
         </div>
       </div>
-  </div>
+  </div> -->
     
   <div class="field beleg_field">
       <select class="ui dropdown" name="category">

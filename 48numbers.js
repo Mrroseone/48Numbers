@@ -1,5 +1,19 @@
 if (Meteor.isClient) {
+
   // counter starts at 0
+Meteor.startup(function () {
+
+    sAlert.config({
+        effect: '',
+        position: 'top-right',
+        timeout: 5000,
+        html: false,
+        onRouteClose: true,
+        stack: true,
+        offset: 0
+    });
+
+});
   
 Template.sidebar.events({
     'click [data-action="general-modal"]': function() {
@@ -12,6 +26,17 @@ Template.sidebar.events({
       SemanticModal.generalModal('belegeModal', {foo: 'bar'});
     }
   });  
+
+Template.sidebar.helpers({
+    activeRouteClass: function(/* route names */) {
+      var args = Array.prototype.slice.call(arguments, 0);
+      args.pop();
+      var active = _.any(args, function(name) {
+      return Router.current() && Router.current().route.getName() === name
+      });
+      return active && 'active';
+    }
+  }); 
 
 Template.projectTeam.rendered = function(){
   this.$('.dropdown')
@@ -74,9 +99,10 @@ Template.sidebar.events({
 
 Template.sidebarButton.events({
     'click button': function () {
-      $('.left.sidebar').sidebar('toggle');
+    $('.left.sidebar').sidebar('toggle');
     }
   });
+
 
 // Template.sidebar.events({
 //     'click button': function () {
@@ -84,21 +110,36 @@ Template.sidebarButton.events({
 //       .sidebar('toggle');
 //         }
 //       });
-
-  Template.MyProjects.helpers({
+    Template.MyProjects.helpers({
     'project': function(){
 
-            console.log('tester');
             return Projekte.find({teamID: this._id, draft:false})
 
     }
   });
 
+
+    Template.billableItem.helpers({
+    'belege': function(){
+            return Belege.find({projectId: this._id})       
+    }
+  });
+
+    // Template.billableItem.helpers({
+    // var total = 0,
+    // Belege.find({projectId:this._id}).map(function(doc) {
+    // total += doc.amount;
+    // console.log(total);
+    // return total;
+    //   })
+    // });
+
     Template.MyDrafts.helpers({
     'project': function(){
 
-            console.log('tester');
-            return Projekte.find({teamID: this._id, draft:true})
+            var user = Meteor.userId();
+            console.log(user);
+            return Projekte.find({team:{$elemMatch:{teamID:user}}})
     }
   });
 
@@ -110,13 +151,19 @@ Template.sidebarButton.events({
     }
   });
 
-  Template.generalModal.rendered = function(){
-this.$('.ui.checkbox')
-  .checkbox();
-this.$('select.dropdown')
-  .dropdown()
-;
+  Template.insertBelege.rendered = function(){
+    $('.ui.checkbox').checkbox().on('click' , function() {
+    var billable = $('#billable').prop('checked') ? 'false' : 'true';
+    $('#billable').attr('value', billable);
+});
 };  
+//   Template.insertBelege.rendered = function(){
+// this.$('.ui.checkbox')
+//   .checkbox('toggle', false, true);
+// this.$('select.dropdown')
+//   .dropdown()
+// ;
+// };  
 
   Template.generalModal.helpers({
     'project': function(){
@@ -125,6 +172,12 @@ this.$('select.dropdown')
   });
 
     Template.addUser.helpers({
+    'project': function(){
+     var test = Projekte.find({team: 1});
+     console.log('test');
+     return Projekte.find({author: 'Dominik Kenzler', draft:true})
+    },
+
     'user': function(){
      return Users.find()
     }
@@ -155,6 +208,13 @@ this.$('select.dropdown')
 if (Meteor.isServer) {
   Meteor.startup(function () {
 
+//     Meteor.publish("collection", function() {
+//     //returns undefined if not logged in so check if logged in first
+//     if(this.userId) {
+//         var user = Meteor.users.findOne(this.userId);
+//         //var user is the same info as would be given in Meteor.user();
+//     }
+// });
     // code to run on server at startup
 
   });

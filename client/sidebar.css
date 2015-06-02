@@ -17,3 +17,9 @@
 .beleg_field {
 padding-bottom: 20px;	
 }
+
+.s-alert-error.s-alert-effect-scale {
+    background: #bada55;  /* your background color here */
+    color: #fff  /* your text color here */
+    z-index: 1000;
+}

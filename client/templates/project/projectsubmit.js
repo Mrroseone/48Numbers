@@ -4,7 +4,7 @@ Template.date.events({
 		
 		var project = {
 
-		// jobnummer: $(e.target).find('[name=jobnummer]').val(),
+		jobnummer: $(e.target).find('[name=jobnummer]').val(),
 		projectId: this._id,
 		title: $(e.target).find('[name=title]').val(),
 		betrag: $(e.target).find('[name=betrag]').val(),

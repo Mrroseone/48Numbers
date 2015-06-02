@@ -20,3 +20,14 @@ test1 = Projekte.aggregate([
     }} 
  ]);
 console.log(test1);
+
+test3 = Belege.aggregate([  
+    {$group: { 
+        _id: null, 
+        summe: { 
+            $sum: '$amount' 
+        } 
+        
+    }} 
+ ]);
+console.log(test3);

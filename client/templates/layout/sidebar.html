@@ -6,11 +6,11 @@
      <div class="ui small inverted header">Eingabe</div>
      <div class="menu">
 
-      <a class="active teal item" data-action="belegeModal">
+      <a class="teal item" data-action="belegeModal">
        <i class="add circle icon"></i>Neuer Beleg
 
      </a>
-     <a class="active teal item" data-action="general-modal">
+     <a class="teal item" data-action="general-modal">
        <i class="add square icon"></i>Neues Projekt
 
      </a>
@@ -21,12 +21,12 @@
  <div class="item">
    <div class="ui small inverted header">Dominik´s Daten</div>
    <div class="menu">
-    <a class="item" href="/meinedrafts">
+    <a class="item {{activeRouteClass 'MyDrafts'}}" href="{{pathFor 'MyDrafts'}}">
      <i class="edit icon"></i>Meine Drafts
      <div class="ui pink label">1</div>
    </a>
 
-   <a class="item" href="/meineprojekte">
+   <a class="item {{activeRouteClass 'MyProjects'}}" href="{{pathFor 'MyProjects'}}">
      <i class="diamond icon"></i>Meine Projekte
      <div class="ui yellow label">1</div>
    </a>

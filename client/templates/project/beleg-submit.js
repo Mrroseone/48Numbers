@@ -7,7 +7,7 @@ Template.insertBelege.events({
 		// jobnummer: $(e.target).find('[name=jobnummer]').val(),
 		// projectId: this._id,
 		discription: $(e.target).find('[name=title]').val(),
-		projectId: $(e.target).find('[name=dropdown]').val(),
+		projectId: $(e.target).find('[name=project]').val(),
 		amount: $(e.target).find('[name=betrag]').val(),
 		billable: $(e.target).find('[name=billable]').val(),
 		category: $(e.target).find('[name=category]').val(),
@@ -24,17 +24,17 @@ Template.insertBelege.events({
 
 
 		Meteor.call('belegInsert', beleg, function(error, result) {
-			// console.log(result._id);
-
+			
+			
 		// display the error to the user and abort
 		// if (error)
-		// 	alert(error.reason);
 			
 		// show this result but route anyway
 		 // Router.go('projectDetail', {jobnummer: result.jobnummer});
 		});
 	}
 });
+
 
 // console.log(project);
 // project._id = Projekte.insert(project);
